@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+/* Variables CSS para manejar los temas dinámicamente */
+:root {
+    /* Variables Modo Claro */
+    --bg-color: #F5F5F7; /* Apple Light Grey */
+    --text-main: #1d1d1f;
+    --text-muted: #86868b;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    --glass-hover: rgba(255, 255, 255, 0.85);
+    --glass-hover-border: rgba(0, 0, 0, 0.05);
+}
+
+/* Variables Modo Oscuro */
+html.dark {
+    --bg-color: #000000;
+    --text-main: #f5f5f7;
+    --text-muted: #a1a1a6;
+    --glass-bg: rgba(22, 22, 23, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    --glass-hover: rgba(30, 30, 32, 0.8);
+    --glass-hover-border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border: 1px solid var(--glass-hover-border);
+    background: var(--glass-hover);
+}
+
+/* Utility para ocultar scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
