@@ -1,4 +1,4 @@
-#ENGLISH
+# ENGLISH
 
 ## Portfolio V1.0.0 - Luis Roca
 
@@ -17,7 +17,7 @@ Personal portfolio designed with a minimalist approach and performance.
 
 ---------------------------------------------------------------------
 
-#ESPAÑOL
+# ESPAÑOL
 
 ## Portfolio V1.0.0 - Luis Roca
 
