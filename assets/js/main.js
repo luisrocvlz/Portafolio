@@ -129,6 +129,7 @@ function toggleLanguage() {
             el.innerHTML = translations[currentLang][key];
         }
     });
+
     const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
     placeholders.forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
@@ -136,6 +137,17 @@ function toggleLanguage() {
             el.placeholder = translations[currentLang][key];
         }
     });
+
+    const cvBtn = document.getElementById('cv-btn');
+    if (cvBtn) {
+        if (currentLang === 'es') {
+            cvBtn.href = "assets/docs/cv_luis_roca_es.pdf";
+            cvBtn.setAttribute('download', "Luis_Roca_CV_ES.pdf");
+        } else {
+            cvBtn.href = "assets/docs/cv_luis_roca_en.pdf";
+            cvBtn.setAttribute('download', "Luis_Roca_CV_EN.pdf");
+        }
+    }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
