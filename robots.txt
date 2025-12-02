@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
-Sitemap: https://tudominio.com/sitemap.xml
+
+# Excluir archivos de sistema o privados
+Disallow: /assets/js/
+
+# Mapa del sitio
+Sitemap: https://luis-roca-portafolio.vercel.app/sitemap.xml
