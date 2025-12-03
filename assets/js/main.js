@@ -142,10 +142,10 @@ function toggleLanguage() {
     if (cvBtn) {
         if (currentLang === 'es') {
             cvBtn.href = "assets/docs/cv_luis_roca_es.pdf";
-            cvBtn.setAttribute('download', "Luis_Roca_CV_ES.pdf");
+            cvBtn.setAttribute('download', "cv_luis_roca_es.pdf");
         } else {
             cvBtn.href = "assets/docs/cv_luis_roca_en.pdf";
-            cvBtn.setAttribute('download', "Luis_Roca_CV_EN.pdf");
+            cvBtn.setAttribute('download', "cv_luis_roca_en.pdf");
         }
     }
 }
