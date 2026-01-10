@@ -158,3 +158,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
+// --- Custom Cursor ---
+const cursor = document.getElementById('custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = (e.clientX - 10) + 'px';
+    cursor.style.top = (e.clientY - 10) + 'px';
+});
