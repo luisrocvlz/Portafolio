@@ -50,7 +50,10 @@ const translations = {
         proj_linea_desc: "Diseño responsivo y navegación intuitiva para servicios profesionales.",
         proj_passos_desc: "Desarrollo enfocado en funcionalidad y accesibilidad para el sector salud en Portugal.",
         automation_title: "Scripts & Automatización",
-        automation_desc: "Más allá del frontend, desarrollo soluciones de web scraping y automatización de tareas masivas con Python para optimizar flujos de trabajo.",
+        automation_desc: "Desarrollo de bots y scripts de web scraping para automatizar tareas repetitivas y complejas.",
+        automation_metric: "Optimización en flujos de carga y descarga masiva de datos.",
+        automation_performance: "Rendimiento",
+        automation_faster: "Más Rápido",
         contact_title: "¿Trabajamos juntos?",
         contact_subtitle: "Estoy siempre abierto a discutir nuevos proyectos, ideas creativas o oportunidades de ser parte de tu visión.",
         contact_email: "Enviar Correo",
@@ -70,6 +73,7 @@ const translations = {
         error_title: "Ups, ruta equivocada",
         error_desc: "Parece que la página que buscas no existe o ha sido movida.",
         btn_home: "Volver al Inicio",
+        footer_location: "Venezuela (GMT-4) | Disponible para proyectos remotos a nivel global.",
     },
     en: {
         nav_about: "Profile",
@@ -93,7 +97,10 @@ const translations = {
         proj_linea_desc: "Responsive design and intuitive navigation for professional services.",
         proj_passos_desc: "Development focused on functionality and accessibility for the healthcare sector in Portugal.",
         automation_title: "Scripts & Automation",
-        automation_desc: "Beyond frontend, I develop web scraping solutions and massive task automation with Python to optimize workflows.",
+        automation_desc: "Development of bots and web scraping scripts to automate complex and repetitive tasks.",
+        automation_metric: "Optimization in massive data upload and download flows.",
+        automation_performance: "Performance",
+        automation_faster: "Faster",
         contact_title: "Work together?",
         contact_subtitle: "I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
         contact_email: "Send Email",
@@ -113,6 +120,7 @@ const translations = {
         error_title: "Oops, wrong turn",
         error_desc: "It seems the page you are looking for doesn't exist or has been moved.",
         btn_home: "Back to Home",
+        footer_location: "Venezuela (GMT-4) | Available for remote projects worldwide.",
     }
 };
 
