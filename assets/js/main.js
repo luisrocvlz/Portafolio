@@ -11,6 +11,17 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     themeIcon.classList.replace('ph-sun', 'ph-moon');
 }
 
+function updatePortrait() {
+    const portraitImg = document.getElementById('portrait-img');
+    if (htmlElement.classList.contains('dark')) {
+        portraitImg.src = 'assets/img/portrait_dark.webp';
+    } else {
+        portraitImg.src = 'assets/img/portrait_light.webp';
+    }
+}
+
+updatePortrait();
+
 function toggleTheme() {
     if (htmlElement.classList.contains('dark')) {
         htmlElement.classList.remove('dark');
@@ -21,6 +32,7 @@ function toggleTheme() {
         localStorage.theme = 'dark';
         themeIcon.classList.replace('ph-moon', 'ph-sun');
     }
+    updatePortrait();
 }
 
 // --- Language Logic ---
@@ -74,6 +86,8 @@ const translations = {
         error_desc: "Parece que la página que buscas no existe o ha sido movida.",
         btn_home: "Volver al Inicio",
         footer_location: "Venezuela (GMT-4) | Disponible para proyectos remotos a nivel global.",
+        theme_tooltip: "Tema",
+        lang_tooltip: "Idioma",
     },
     en: {
         nav_about: "Profile",
@@ -121,6 +135,8 @@ const translations = {
         error_desc: "It seems the page you are looking for doesn't exist or has been moved.",
         btn_home: "Back to Home",
         footer_location: "Venezuela (GMT-4) | Available for remote projects worldwide.",
+        theme_tooltip: "Theme",
+        lang_tooltip: "Language",
     }
 };
 
@@ -144,6 +160,14 @@ function toggleLanguage() {
         }
     });
 
+    const titles = document.querySelectorAll('[data-i18n-title]');
+    titles.forEach(el => {
+        const key = el.getAttribute('data-i18n-title');
+        if (translations[currentLang][key]) {
+            el.title = translations[currentLang][key];
+        }
+    });
+
     const cvBtn = document.getElementById('cv-btn');
     if (cvBtn) {
         if (currentLang === 'es') {
@@ -163,6 +187,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+// Initialize titles on page load
+const initTitles = document.querySelectorAll('[data-i18n-title]');
+initTitles.forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (translations[currentLang][key]) {
+        el.title = translations[currentLang][key];
+    }
 });
 
 // --- Custom Cursor ---
