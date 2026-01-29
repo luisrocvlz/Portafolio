@@ -88,6 +88,17 @@ const translations = {
         footer_location: "Venezuela (GMT-4) | Disponible para proyectos remotos a nivel global.",
         theme_tooltip: "Tema",
         lang_tooltip: "Idioma",
+        btn_load_more: "Ver más proyectos",
+        btn_show_less: "Ver menos",
+        automation_performance: "Rendimiento",
+        tag_app: "App Android",
+        proj_vene_desc: "Aplicación móvil de conversión de divisas en tiempo real adaptada al mercado venezolano.",
+        tag_legal: "Legal",
+        proj_duarte_desc: "Sitio corporativo para firma legal. Diseño sobrio, optimización SEO y gestión de contenidos en WordPress.",
+        automation_performance: "Rendimiento",
+        automation_stat_desc: "Optimización en tiempos de carga y descarga masiva de datos.",
+        btn_load_more: "Ver más proyectos",
+        btn_show_less: "Mostrar menos proyectos",
     },
     en: {
         nav_about: "Profile",
@@ -137,6 +148,17 @@ const translations = {
         footer_location: "Venezuela (GMT-4) | Available for remote projects worldwide.",
         theme_tooltip: "Theme",
         lang_tooltip: "Language",
+        btn_load_more: "Show more projects",
+        btn_show_less: "Show less",
+        automation_performance: "Performance",
+        tag_app: "Android App",
+        proj_vene_desc: "Real-time currency conversion mobile app adapted for the Venezuelan market.",
+        tag_legal: "Legal",
+        proj_duarte_desc: "Corporate website for a law firm. Sober design, SEO optimization, and content management via WordPress.",
+        automation_performance: "Performance Boost",
+        automation_stat_desc: "Optimization in massive data upload and download times.",
+        btn_load_more: "Show more projects",
+        btn_show_less: "Show less projects",
     }
 };
 
@@ -204,4 +226,53 @@ const cursor = document.getElementById('custom-cursor');
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = (e.clientX - 10) + 'px';
     cursor.style.top = (e.clientY - 10) + 'px';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loadMoreText = document.getElementById('load-more-text');
+    const loadMoreIcon = document.getElementById('load-more-icon');
+    const hiddenProjects = document.querySelectorAll('.hidden-project');
+
+    let isExpanded = false;
+
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+
+            // 1. Mostrar / Ocultar Proyectos
+            hiddenProjects.forEach(project => {
+                if (isExpanded) {
+                    project.classList.remove('hidden');
+                    project.classList.add('animate-fade-in');
+                } else {
+                    project.classList.add('hidden');
+                    project.classList.remove('animate-fade-in');
+                }
+            });
+
+            // 2. Detectar idioma actual (buscamos la variable o el atributo html)
+            const currentLang = document.documentElement.lang || 'es';
+
+            // 3. Actualizar Botón
+            if (isExpanded) {
+                loadMoreText.setAttribute('data-i18n', 'btn_show_less');
+
+                loadMoreText.innerText = currentLang === 'en' ? 'Show less projects' : 'Mostrar menos proyectos';
+
+                loadMoreIcon.classList.remove('ph-caret-down');
+                loadMoreIcon.classList.add('ph-caret-up');
+
+            } else {
+                loadMoreText.setAttribute('data-i18n', 'btn_load_more');
+
+                loadMoreText.innerText = currentLang === 'en' ? 'Show more projects' : 'Ver más proyectos';
+
+                loadMoreIcon.classList.remove('ph-caret-up');
+                loadMoreIcon.classList.add('ph-caret-down');
+
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 });
