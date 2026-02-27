@@ -4,103 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <meta name="theme-color" content="#000000">
-    <title>404 | Página no encontrada</title>
+    <title>404 | Luis Roca</title>
+    <meta name="description" content="Página no encontrada.">
+    <meta name="robots" content="noindex">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicon/devicon@v2.16.0/devicon.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/js/tailwind.config.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="/src/main.js"></script>
 </head>
 
-<body class="antialiased selection:bg-blue-500 selection:text-white flex flex-col min-h-screen">
-
-    <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
-        <div
-            class="absolute top-0 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 dark:opacity-20 animate-blob transition-opacity duration-500">
-        </div>
-        <div
-            class="absolute top-0 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 dark:opacity-20 animate-blob animation-delay-2000 transition-opacity duration-500">
-        </div>
-        <div
-            class="absolute -bottom-32 left-1/3 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 dark:opacity-20 animate-blob animation-delay-4000 transition-opacity duration-500">
+<body class="antialiased selection:bg-blue-500 selection:text-white">
+    <div id="app">
+        <!-- 404 content rendered inline since it doesn't need components -->
+        <div class="min-h-screen flex flex-col items-center justify-center text-center px-4">
+            <div
+                class="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-[var(--text-main)] to-gray-500 mb-6">
+                404</div>
+            <h1 class="text-3xl font-bold mb-3" data-i18n="error_title">Ups, ruta equivocada</h1>
+            <p class="text-muted mb-8 max-w-md" data-i18n="error_desc">Parece que la página que buscas no existe o ha
+                sido movida.</p>
+            <a href="/"
+                class="glass-card px-8 py-3 rounded-full text-sm font-semibold hover:scale-105 transition-transform flex items-center gap-2"
+                data-i18n="btn_home">
+                Volver al Inicio
+            </a>
         </div>
     </div>
-
-    <nav class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-auto transition-all duration-300">
-        <div class="glass-card rounded-full px-4 py-2 md:px-6 md:py-3 flex items-center justify-between gap-4 md:gap-8">
-            <a href="index.html" class="text-sm font-semibold tracking-wide hover:opacity-70 transition-colors">Luis
-                R.</a>
-
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html#about"
-                    class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider"
-                    data-i18n="nav_about">Perfil</a>
-                <a href="index.html#projects"
-                    class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider"
-                    data-i18n="nav_projects">Proyectos</a>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <button onclick="toggleTheme()"
-                    class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors focus:outline-none">
-                    <i id="theme-icon" class="ph ph-sun text-lg"></i>
-                </button>
-
-                <button onclick="toggleLanguage()"
-                    class="flex items-center gap-1 px-3 py-1 rounded-full bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 transition-colors text-xs font-bold w-12 justify-center">
-                    <span id="lang-text">EN</span>
-                </button>
-
-                <a id="cv-btn" href="assets/docs/cv_luis_roca_es.pdf" download="Luis_Roca_CV_ES.pdf"
-                    class="group relative p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors flex items-center justify-center text-[var(--text-main)]">
-                    <i class="ph ph-file-pdf text-lg"></i>
-                    <span
-                        class="absolute top-full mt-2 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-800 text-white text-[10px] font-bold rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
-                        CV
-                    </span>
-                </a>
-            </div>
-        </div>
-    </nav>
-
-    <main class="flex-grow flex items-center justify-center px-4">
-        <div
-            class="glass-card p-12 md:p-16 rounded-[3rem] text-center max-w-2xl w-full relative overflow-hidden animate-fade-in">
-
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-purple-500 rounded-full mix-blend-overlay filter blur-[60px] opacity-30 pointer-events-none">
-            </div>
-
-            <div class="relative z-10">
-                <h1
-                    class="text-9xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600 mb-2">
-                    404</h1>
-
-                <h2 class="text-2xl md:text-3xl font-bold mb-4" data-i18n="error_title">Ups, ruta equivocada</h2>
-
-                <p class="text-muted text-lg mb-8 max-w-md mx-auto" data-i18n="error_desc">
-                    Parece que la página que buscas no existe o ha sido movida.
-                </p>
-
-                <a href="index.html"
-                    class="inline-flex items-center gap-2 bg-[var(--text-main)] text-[var(--bg-color)] px-8 py-4 rounded-full font-bold hover:opacity-90 transition-all transform hover:scale-105 shadow-lg">
-                    <i class="ph ph-house"></i>
-                    <span data-i18n="btn_home">Volver al Inicio</span>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer class="text-center py-6 text-muted text-sm">
-        <p>&copy; 2025 Luis Roca Velásquez.</p>
-    </footer>
-
-    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
