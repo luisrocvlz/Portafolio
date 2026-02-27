@@ -2,64 +2,96 @@
 
 ## Credits
 
-This template was originally created by [Luis Roca](https://github.com/luisrocvlz). If you use it, a small credit would be appreciated but is not required.
+Originally created by [Luis Roca](https://github.com/luisrocvlz). If you use it, a small credit is appreciated but not required.
 
-## Portfolio Template V1
+## Portfolio V2
 
-A minimalist, high-performance, and easily customizable personal portfolio template. Built with semantic HTML, Tailwind CSS, and Vanilla JavaScript.
+A professional, component-based personal portfolio. Built with **Vite**, **Tailwind CSS v3**, and **Vanilla JavaScript (ES6 modules)** — no frameworks, just clean and maintainable code.
 
 ### Features
 
-- **Minimalist Design:** Clean and focused on content.
-- **Responsive:** Adapts perfectly to any screen size.
-- **Dark/Light Mode:** Automatic and manual theme switching.
-- **Bilingual:** Supports English and Spanish out-of-the-box.
-- **Scroll Animations:** Subtle animations on scroll.
-- **No Build Step:** No need for complex build tools, everything runs in the browser.
+- **Component-based architecture** — each section is an independent JS module
+- **Responsive** — adapts to any screen size
+- **Dark / Light mode** — persisted via `localStorage`
+- **Bilingual (ES / EN)** — full i18n system via `data-i18n` attributes
+- **Glassmorphism UI** — custom glass cards, animated blobs, custom cursor
+- **Infinite tech scroll** — SVG logos from [svgl.app](https://svgl.app)
+- **Vite build** — fast HMR in development, optimized bundle for production
 
-### Technologies
+### Tech Stack
 
-- Semantic HTML5
-- Tailwind CSS (v3.4) via CDN for styling.
-- Vanilla JavaScript (ES6+) for interactivity.
-- [Phosphor Icons](https://phosphoricons.com/) for iconography.
-- [Formspree](https://formspree.io/) for contact form management.
+| Tool | Purpose |
+|---|---|
+| [Vite](https://vitejs.dev/) | Bundler & dev server |
+| [Tailwind CSS v3](https://tailwindcss.com/) | Utility-first styling |
+| [Phosphor Icons](https://phosphoricons.com/) | UI icons |
+| [svgl.app](https://svgl.app/) | SVG brand logos |
+| [Formspree](https://formspree.io/) | Contact form |
 
 ---
 
-### How to Use & Customize
+### Project Structure
 
-#### 1. Local Installation
+```
+src/
+├── components/     # UI components (Navbar, Hero, Projects, etc.)
+├── data/           # Decoupled data (projects.js, translations.js, techStack.js)
+├── utils/          # Reusable utilities (theme.js, i18n.js, smoothScroll.js)
+└── styles/         # CSS (main.css — Tailwind + variables + components)
+public/
+├── img/            # Project images & portraits
+└── docs/           # CV PDFs (ES & EN)
+```
 
-1. Clone this repository: `git clone https://github.com/luisrocvlz/Portafolio.git`
-2. Navigate to the project directory.
-3. Open the `index.html` file in your browser. A local server can be helpful for development but is not strictly necessary.
+### Getting Started
 
-#### 2. Personal Information
+```bash
+# 1. Clone the repo
+git clone https://github.com/luisrocvlz/Portafolio.git
+cd Portafolio
 
-- Open `index.html` and edit the text directly (e.g., name, titles, descriptions).
-- The portfolio supports two languages. To change the text for both, find the `data-i18n` attributes in the HTML and then modify the corresponding entries in the `assets/js/main.js` file within the `translations` object.
+# 2. Install dependencies
+npm install
 
-#### 3. Images & CV
+# 3. Start dev server
+npm run dev        # http://localhost:5173
 
-- **Portrait:** Replace `assets/img/portrait.png` with your own photo.
-- **Project Images:** Replace the images in `assets/img/` with your project thumbnails.
-- **CV:** Replace the PDF files `cv_luis_roca_en.pdf` and `cv_luis_roca_es.pdf` in the `assets/docs/` folder. Make sure to update the file names in `index.html` and `assets/js/main.js` if you change them.
+# 4. Build for production
+npm run build
+```
 
-#### 4. Contact Form
+---
 
-1. Go to [Formspree](https://formspree.io/) and create a new form.
-2. You will get a unique endpoint URL.
-3. Open `index.html`, find the `<form>` tag, and replace the `action` attribute URL with your new Formspree URL.
+### Customization
 
-#### 5. Customizing the Theme
+#### Personal Info & Text
+- Edit text in `src/components/` (Hero, About, Contact, etc.)
+- Edit all translations in `src/data/translations.js`
 
-- **Colors & Fonts:** Open `assets/js/tailwind.config.js`. You can modify the primary colors and fonts used in the portfolio within the `theme` object.
-- **Custom CSS:** For more advanced style changes, you can add your own CSS rules in `assets/css/style.css`.
+#### Projects
+- Edit `src/data/projects.js` — add/remove/update project objects
+
+#### Tech Stack Carousel
+- Edit `src/data/techStack.js` — add SVG URLs from [svgl.app](https://svgl.app) or inline SVG strings
+
+#### Images & CV
+- Portrait: replace `public/img/portrait_light.webp` and `public/img/portrait_dark.webp`
+- Project thumbnails: replace images in `public/img/`
+- CV: replace `public/docs/cv_luis_roca_es.pdf` / `public/docs/cv_luis_roca_en.pdf`  
+  Then update the filenames in `src/utils/i18n.js`
+
+#### Theme & Colors
+- CSS variables (colors, glass effects): `src/styles/main.css` — `:root` and `html.dark`
+- Tailwind config (animations, fonts): `tailwind.config.js`
+
+#### Contact Form
+1. Go to [Formspree](https://formspree.io/) and create a form
+2. Copy your endpoint URL
+3. Update the `action` attribute in `src/components/Contact.js`
 
 ### License
 
-This project is licensed under the MIT License. You are free to use, modify, and distribute it as you see fit.
+MIT — free to use, modify, and distribute.
 
 ---
 ---
@@ -68,61 +100,93 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 ## Créditos
 
-Esta plantilla fue creada originalmente por [Luis Roca](https://github.com/luisrocvlz). Si la utilizas, un pequeño crédito sería apreciado pero no es obligatorio.
+Creado originalmente por [Luis Roca](https://github.com/luisrocvlz). Si lo usas, un pequeño crédito es apreciado pero no obligatorio.
 
-## Plantilla de Portafolio V1
+## Portafolio V2
 
-Una plantilla de portafolio personal minimalista, de alto rendimiento y fácilmente personalizable. Construido con HTML semántico, Tailwind CSS y Vanilla JavaScript.
+Un portafolio personal profesional y basado en componentes. Construido con **Vite**, **Tailwind CSS v3** y **Vanilla JavaScript (módulos ES6)** — sin frameworks, solo código limpio y mantenible.
 
 ### Características
 
-- **Diseño Minimalista:** Limpio y centrado en el contenido.
-- **Responsivo:** Se adapta perfectamente a cualquier tamaño de pantalla.
-- **Modo Oscuro/Claro:** Cambio de tema automático y manual.
-- **Bilingüe:** Soporte para inglés y español listo para usar.
-- **Animaciones de Scroll:** Animaciones sutiles al desplazarse.
-- **Sin Compilación:** No necesita herramientas complejas, todo se ejecuta en el navegador.
+- **Arquitectura basada en componentes** — cada sección es un módulo JS independiente
+- **Responsivo** — se adapta a cualquier tamaño de pantalla
+- **Modo oscuro / claro** — persistido con `localStorage`
+- **Bilingüe (ES / EN)** — sistema i18n completo con atributos `data-i18n`
+- **UI Glassmorphism** — glass cards, blobs animados, cursor personalizado
+- **Carrusel de tecnologías** — logos SVG desde [svgl.app](https://svgl.app)
+- **Build con Vite** — HMR rápido en desarrollo, bundle optimizado para producción
 
-### Tecnologías
+### Stack Tecnológico
 
-- HTML5 Semántico
-- Tailwind CSS (v3.4) vía CDN para los estilos.
-- Vanilla JavaScript (ES6+) para la interactividad.
-- [Phosphor Icons](https://phosphoricons.com/) para la iconografía.
-- [Formspree](https://formspree.io/) para la gestión del formulario de contacto.
+| Herramienta | Propósito |
+|---|---|
+| [Vite](https://vitejs.dev/) | Bundler y servidor de desarrollo |
+| [Tailwind CSS v3](https://tailwindcss.com/) | Estilos utilitarios |
+| [Phosphor Icons](https://phosphoricons.com/) | Iconos de UI |
+| [svgl.app](https://svgl.app/) | Logos SVG de marcas |
+| [Formspree](https://formspree.io/) | Formulario de contacto |
 
 ---
 
-### Cómo Usar y Personalizar
+### Estructura del Proyecto
 
-#### 1. Instalación Local
+```
+src/
+├── components/     # Componentes UI (Navbar, Hero, Projects, etc.)
+├── data/           # Datos desacoplados (projects.js, translations.js, techStack.js)
+├── utils/          # Utilidades reutilizables (theme.js, i18n.js, smoothScroll.js)
+└── styles/         # CSS (main.css — Tailwind + variables + componentes)
+public/
+├── img/            # Imágenes de proyectos y retratos
+└── docs/           # CVs en PDF (ES & EN)
+```
 
-1. Clona este repositorio: `git clone https://github.com/luisrocvlz/Portafolio.git`
-2. Navega al directorio del proyecto.
-3. Abre el archivo `index.html` en tu navegador. Un servidor local puede ser útil para el desarrollo, pero no es estrictamente necesario.
+### Inicio Rápido
 
-#### 2. Información Personal
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/luisrocvlz/Portafolio.git
+cd Portafolio
 
-- Abre `index.html` y edita el texto directamente (ej. nombre, títulos, descripciones).
-- El portafolio soporta dos idiomas. Para cambiar el texto de ambos, busca los atributos `data-i18n` en el HTML y luego modifica las entradas correspondientes en el archivo `assets/js/main.js` dentro del objeto `translations`.
+# 2. Instalar dependencias
+npm install
 
-#### 3. Imágenes y CV
+# 3. Iniciar servidor de desarrollo
+npm run dev        # http://localhost:5173
 
-- **Retrato:** Reemplaza `assets/img/portrait.png` con tu propia foto.
-- **Imágenes de Proyectos:** Reemplaza las imágenes en `assets/img/` con las miniaturas de tus proyectos.
-- **CV:** Reemplaza los archivos PDF `cv_luis_roca_en.pdf` y `cv_luis_roca_es.pdf` en la carpeta `assets/docs/`. Asegúrate de actualizar los nombres de los archivos en `index.html` y `assets/js/main.js` si los cambias.
+# 4. Compilar para producción
+npm run build
+```
 
-#### 4. Formulario de Contacto
+---
 
-1. Ve a [Formspree](https://formspree.io/) y crea un nuevo formulario.
-2. Obtendrás una URL de endpoint única.
-3. Abre `index.html`, busca la etiqueta `<form>` y reemplaza la URL en el atributo `action` con tu nueva URL de Formspree.
+### Personalización
 
-#### 5. Personalizar el Tema
+#### Información Personal y Textos
+- Edita el texto en `src/components/` (Hero, About, Contact, etc.)
+- Edita todas las traducciones en `src/data/translations.js`
 
-- **Colores y Fuentes:** Abre `assets/js/tailwind.config.js`. Puedes modificar los colores primarios y las fuentes utilizadas en el portafolio dentro del objeto `theme`.
-- **CSS Personalizado:** Para cambios de estilo más avanzados, puedes agregar tus propias reglas de CSS en `assets/css/style.css`.
+#### Proyectos
+- Edita `src/data/projects.js` — agrega, elimina o actualiza objetos de proyectos
+
+#### Carrusel de Tecnologías
+- Edita `src/data/techStack.js` — agrega URLs de SVG desde [svgl.app](https://svgl.app) o strings SVG inline
+
+#### Imágenes y CV
+- Retrato: reemplaza `public/img/portrait_light.webp` y `public/img/portrait_dark.webp`
+- Miniaturas: reemplaza las imágenes en `public/img/`
+- CV: reemplaza `public/docs/cv_luis_roca_es.pdf` / `public/docs/cv_luis_roca_en.pdf`  
+  Luego actualiza los nombres en `src/utils/i18n.js`
+
+#### Tema y Colores
+- Variables CSS (colores, efectos glass): `src/styles/main.css` — `:root` y `html.dark`
+- Config de Tailwind (animaciones, fuentes): `tailwind.config.js`
+
+#### Formulario de Contacto
+1. Ve a [Formspree](https://formspree.io/) y crea un formulario
+2. Copia tu URL de endpoint
+3. Actualiza el atributo `action` en `src/components/Contact.js`
 
 ### Licencia
 
-Este proyecto está bajo la Licencia MIT. Eres libre de usarlo, modificarlo y distribuirlo como consideres oportuno.
+MIT — libre para usar, modificar y distribuir.
