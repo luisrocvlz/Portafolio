@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Excluir archivos de sistema o privados
+Disallow: /assets/js/
+
+# Mapa del sitio
+Sitemap: https://luis-roca-portafolio.vercel.app/sitemap.xml
