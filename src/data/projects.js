@@ -6,6 +6,21 @@
 
 export const projects = [
     {
+        id: 'qualitzer',
+        href: 'https://qualitzer.com',
+        target: '_blank',
+        imgSrc: '/img/qualitzer.webp',
+        imgAlt: 'Qualitzer',
+        bgColor: 'bg-gray-200 dark:bg-gray-800',
+        tagKey: 'tag_corporate',
+        tagColor: 'bg-blue-600/80',
+        title: 'Qualitzer.com',
+        hoverColor: 'group-hover:text-blue-500 dark:group-hover:text-blue-400',
+        descKey: 'proj_qualitzer_desc',
+        tags: ['React', 'TypeScript', 'Vite'],
+        hidden: false,
+    },
+    {
         id: 'vene-converter',
         href: 'https://github.com/luisrocvlz/vene_converter',
         target: '_blank',
@@ -79,21 +94,6 @@ export const projects = [
         descKey: 'proj_thesis_desc',
         tags: ['PHP + JS', 'PayPal'],
         isGithub: true,
-        hidden: false,
-    },
-    {
-        id: 'qualitzer',
-        href: 'https://qualitzer.com',
-        target: '_blank',
-        imgSrc: '/img/qualitzer.webp',
-        imgAlt: 'Qualitzer',
-        bgColor: 'bg-gray-200 dark:bg-gray-800',
-        tagKey: 'tag_corporate',
-        tagColor: 'bg-blue-600/80',
-        title: 'Qualitzer.com',
-        hoverColor: 'group-hover:text-blue-500 dark:group-hover:text-blue-400',
-        descKey: 'proj_qualitzer_desc',
-        tags: ['WordPress', 'Python'],
         hidden: false,
     },
     {
