@@ -22,6 +22,7 @@ import { Navbar, initNavbar } from './components/Navbar.js';
 import { Hero } from './components/Hero.js';
 import { About } from './components/About.js';
 import { TechScroll, syncTechScrollTheme } from './components/TechScroll.js';
+import { Experience, initExperience } from './components/Experience.js';
 import { Projects, initProjects } from './components/Projects.js';
 import { Contact } from './components/Contact.js';
 import { Footer } from './components/Footer.js';
@@ -47,6 +48,7 @@ app.innerHTML = `
     ${Hero()}
     ${About()}
     ${TechScroll()}
+    ${Experience()}
     ${Projects()}
     ${Contact()}
     ${Footer()}
@@ -58,6 +60,7 @@ app.innerHTML = `
 // ─────────────────────────────────────────────
 initCursor();
 initNavbar();
+initExperience();
 initProjects();
 initSmoothScroll();
 syncTechScrollTheme();

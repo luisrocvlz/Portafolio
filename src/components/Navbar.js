@@ -16,6 +16,7 @@ export function Navbar() {
 
         <div class="hidden md:flex space-x-6">
           <a href="#about"   class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider" data-i18n="nav_about">Perfil</a>
+          <a href="#experience" class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider" data-i18n="nav_experience">Trayectoria</a>
           <a href="#projects" class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider" data-i18n="nav_projects">Proyectos</a>
           <a href="#stack"   class="text-xs font-medium text-muted hover:text-[var(--text-main)] transition-colors uppercase tracking-wider" data-i18n="nav_stack">Stack</a>
         </div>
